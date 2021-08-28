@@ -1,4 +1,4 @@
-import { Button, FormControl, InputLabel, Input, IconButton } from '@material-ui/core';
+import { FormControl, Input, IconButton } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Message from './components/Message/Message';
@@ -49,16 +49,15 @@ function App() {
       <h2>Welcome { username }</h2>
 
       <form onSubmit={sendMessage} className="app__form">
-        <FormControl>
-          <InputLabel>Enter a message...</InputLabel>
-          <Input value={input} onChange={(e) => setInput(e.target.value)} />
-          <IconButton disabled={!input.trim()} variant="contained" color="primary" type="submit">
+        <FormControl className="app__formControl">
+          <Input className="app__input" placeholder="Enter a message..." value={input} onChange={(e) => setInput(e.target.value)} />
+          <IconButton className="app__iconButton" disabled={!input.trim()} variant="contained" color="primary" type="submit">
             <SendRoundedIcon color="primary" />
           </IconButton>
         </FormControl>
       </form>
 
-      <FlipMove className="messages">
+      <FlipMove className="app__messages">
         {
           messages.map((message) => (
             <Message key={message.id} username={username} message={message} />

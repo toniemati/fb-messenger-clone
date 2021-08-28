@@ -8,5 +8,24 @@
   bottom: 0;
   z-index: 1;
   background-color: #e9e9eb;
-  width: 100%;
+  width: 99%;
+}
+
+.app__formControl {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__input {
+  flex: 1;
+}
+
+.app_iconButton {
+  flex: 0;
+}
+
+.app__messages {
+  padding-bottom: 88px;
 }
